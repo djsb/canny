@@ -21,6 +21,13 @@
 #define CE_PIN 2
 #define CSN_PIN 15
 
+
+// Muzzley Configuration
+String MProfileID = "56f5ac9fca1a124ae2906977";
+char MUUID[37] = "40e30d82-7cd2-477c-b3b0-700e184e0652";
+char MAppToken[17] = "2a3a08767d145205";
+
+
 RF24 radio(CE_PIN, CSN_PIN);
 PL1167_nRF24 prf(radio);
 MiLightRadio mlr(prf);
@@ -70,7 +77,6 @@ void setup() {
   SPIFFS.begin();
   //SPIFFS.format();
 
-  
 
   //WiFiManager
   //Local intialization. Once its business is done, there is no need to keep it around
@@ -96,7 +102,7 @@ void setup() {
  
   delay(200);
   // init Muzzley DeviceKey and SerialNumber
-  String deviceKey; // = "bc0ca451-25c7-4fee-9c45-df03f87e7e5d";
+  String deviceKey; 
   uint8_t mac[6];
   WiFi.macAddress(mac);
   String serialNumber = sf.macToStr(mac);
@@ -122,8 +128,8 @@ void setup() {
 
  
   // initialize SSD discovery
-  //Serial.println("Starting SSDP...\n");
-  SSDP.setDeviceType("urn:Muzzley:device:56f5ac9fca1a124ae2906977:1");
+  String urn = "urn:Muzzley:device:"+MProfileID+":1";
+  SSDP.setDeviceType(urn);
   SSDP.setSchemaURL("description.xml");
   SSDP.setHTTPPort(80);
   SSDP.setName("Muzzley");
@@ -170,9 +176,10 @@ void connect() {
   while (!client.connected()) {
     Serial.print("\nAttempting MQTT connection...");
     delay (10); // TODO djsb - crash without this
-    if (client.connect("ESP8266Client", "40e30d82-7cd2-477c-b3b0-700e184e0652", "2a3a08767d145205")) {
+    if (client.connect("ESP8266Client", MUUID, MAppToken)) {
       Serial.println("connected");
-      client.subscribe("v1/iot/profiles/56f5ac9fca1a124ae2906977/channels/1372ce90-d539-491b-b046-ef5b24aad3a5/#");
+      String substopic = "v1/iot/profiles/"+MProfileID+"/channels/1372ce90-d539-491b-b046-ef5b24aad3a5/#";
+      client.subscribe(substopic);
     } else {
       Serial.print("failed, rc=");
       Serial.println(" try again in 5 seconds");
