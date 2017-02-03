@@ -1,0 +1,347 @@
+{
+  "components": [
+    {
+      "id": "bulb",
+      "label": "Bulb",
+      "classes": "[\"com.muzzley.components.lightbulb\"]"
+    },
+    {
+      "id": "bridge",
+      "label": "Bridge",
+      "classes": "[\"com.muzzley.components.bridge\"]"
+    }
+  ],
+  "properties": [
+    {
+      "id": "status",
+      "label": "Status",
+      "agentLabel": "",
+      "classes": "[\"com.muzzley.properties.status\"]",
+      "mainInformationPriority": 0,
+      "informationPresentation": {
+        "type": "",
+        "options": ""
+      },
+      "unitsOptions": {
+        "targetImperial": "",
+        "targetMetric": "",
+        "muzzleyUnit": ""
+      },
+      "mainActionPriority": 0,
+      "actionPresentation": {
+        "type": "",
+        "options": ""
+      },
+      "schema": "https://ontology.muzzley.com/schemas/v1/status-onoff",
+      "schemaExtension": "{}",
+      "isTriggerable": true,
+      "isActionable": true,
+      "requiredCapabilities": "[]",
+      "controlInterfaces": [
+        {
+          "id": "ti1",
+          "controlInterface": "toggle-picker",
+          "config": "{\"options\":[{\"value\":true,\"label\":\"Ligado\"},{\"value\":false,\"label\":\"Desligado\"}]}"
+        }
+      ],
+      "triggers": [
+        {
+          "id": "8548c9cd-74c3-4b07-b1db-1c23c0f5774f",
+          "condition": "equals",
+          "predicateLabel": "is equal to",
+          "inputsLabel": "{{value}}",
+          "inputs": [
+            {
+              "id": "value",
+              "controlInterfaceId": "ti1",
+              "path": "[{\"source\":\"selection.value\",\"target\":\"data.value\"}]"
+            }
+          ],
+          "label": ""
+        }
+      ],
+      "actions": [
+        {
+          "id": "93639822-d1ed-4495-991b-4c7a34aba55a",
+          "label": "",
+          "inputsLabel": "{{value}}",
+          "inputs": [
+            {
+              "controlInterfaceId": "ti1",
+              "path": "[{\"source\":\"selection.value\",\"target\":\"data.value\"}]"
+            }
+          ]
+        }
+      ],
+      "io": "rws",
+      "onChange": false,
+      "rateLimit": 0,
+      "components": "[\"bulb\"]"
+    },
+    {
+      "id": "color",
+      "label": "Color",
+      "agentLabel": "",
+      "classes": "[\"com.muzzley.properties.lights.color.rgb\",\"com.muzzley.properties.lights.color\",\"com.muzzley.properties.color\"]",
+      "mainInformationPriority": 0,
+      "informationPresentation": {
+        "type": "",
+        "options": ""
+      },
+      "unitsOptions": {
+        "targetImperial": "",
+        "targetMetric": "",
+        "muzzleyUnit": ""
+      },
+      "mainActionPriority": 0,
+      "actionPresentation": {
+        "type": "",
+        "options": ""
+      },
+      "schema": "https://ontology.muzzley.com/schemas/v1/color-rgb",
+      "schemaExtension": "{}",
+      "isTriggerable": false,
+      "isActionable": true,
+      "requiredCapabilities": "[]",
+      "controlInterfaces": [
+        {
+          "id": "colorI1",
+          "controlInterface": "color-picker",
+          "config": "{\"mode\":\"rgb\"}"
+        }
+      ],
+      "triggers": [],
+      "actions": [
+        {
+          "id": "9fbfe992-dbca-4eca-ab8f-f6ec9d214cc9",
+          "label": "set color to",
+          "inputsLabel": "{{value}}",
+          "inputs": [
+            {
+              "controlInterfaceId": "colorI1",
+              "path": "[{\"source\":\"selection.value\",\"target\":\"data.value\"}]"
+            }
+          ]
+        }
+      ],
+      "io": "rws",
+      "onChange": false,
+      "rateLimit": 0,
+      "components": "[\"bulb\"]"
+    },
+    {
+      "id": "brightness",
+      "label": "Brightness",
+      "agentLabel": "",
+      "classes": "[\"com.muzzley.properties.lights.brightness\",\"com.muzzley.properties.lights.brightness\",\"com.muzzley.properties.brightness\"]",
+      "mainInformationPriority": 0,
+      "informationPresentation": {
+        "type": "",
+        "options": ""
+      },
+      "unitsOptions": {
+        "targetImperial": "",
+        "targetMetric": "",
+        "muzzleyUnit": ""
+      },
+      "mainActionPriority": 0,
+      "actionPresentation": {
+        "type": "",
+        "options": ""
+      },
+      "schema": "https://ontology.muzzley.com/schemas/v1/brightness",
+      "schemaExtension": "{\"minimum\":0,\"maximum\":1}",
+      "isTriggerable": true,
+      "isActionable": true,
+      "requiredCapabilities": "[]",
+      "controlInterfaces": [
+        {
+          "id": "brigI1",
+          "controlInterface": "number-picker",
+          "config": "{\"min\":0,\"max\":1,\"step\":0.1,\"expression\":\"x*100\",\"suffix\":\"%\"}"
+        }
+      ],
+      "triggers": [
+        {
+          "id": "81d4aab8-794c-49cb-8c5d-46494f6fae08",
+          "condition": "less-than-or-equal",
+          "predicateLabel": "drops bellow",
+          "inputsLabel": "{{value}}",
+          "inputs": [
+            {
+              "id": "value",
+              "controlInterfaceId": "brigI1",
+              "path": "[{\"source\":\"selection.value\",\"target\":\"data.value\"}]"
+            }
+          ],
+          "label": "If brightness less than or equal"
+        },
+        {
+          "id": "227062b8-bcdc-4bfe-9d48-f203753210c0",
+          "condition": "greater-than-or-equal",
+          "predicateLabel": "rises above",
+          "inputsLabel": "{{value}}",
+          "inputs": [
+            {
+              "id": "value",
+              "controlInterfaceId": "brigI1",
+              "path": "[{\"source\":\"selection.value\",\"target\":\"data.value\"}]"
+            }
+          ],
+          "label": "If brightness greater than or equal"
+        }
+      ],
+      "actions": [
+        {
+          "id": "b4467f6b-9908-446c-a3fe-199a0312a402",
+          "label": "",
+          "inputsLabel": "{{value}}",
+          "inputs": [
+            {
+              "controlInterfaceId": "brigI1",
+              "path": "[{\"source\":\"selection.value\",\"target\":\"data.value\"}]"
+            }
+          ]
+        }
+      ],
+      "io": "rws",
+      "onChange": false,
+      "rateLimit": 0,
+      "components": "[\"bulb\"]"
+    },
+    {
+      "id": "assign-button",
+      "label": "Assign bulb to button",
+      "agentLabel": "",
+      "classes": "[\"com.muzzley.properties.lights.assign\",\"com.muzzley.properties.assign\"]",
+      "mainInformationPriority": 0,
+      "informationPresentation": {
+        "type": "",
+        "options": ""
+      },
+      "unitsOptions": {
+        "targetImperial": "",
+        "targetMetric": "",
+        "muzzleyUnit": ""
+      },
+      "mainActionPriority": 0,
+      "actionPresentation": {
+        "type": "",
+        "options": ""
+      },
+      "schema": "https://ontology.muzzley.com/schemas/v1/string",
+      "schemaExtension": "{}",
+      "isTriggerable": false,
+      "isActionable": false,
+      "requiredCapabilities": "[]",
+      "controlInterfaces": [],
+      "triggers": [],
+      "actions": [],
+      "io": "w",
+      "onChange": false,
+      "rateLimit": 0,
+      "components": "[\"bulb\"]"
+    },
+    {
+      "id": "connection-status",
+      "label": "Connection status",
+      "agentLabel": "",
+      "classes": "[\"com.muzzley.properties.connection.status\",\"com.muzzley.properties.status.connection\"]",
+      "mainInformationPriority": 0,
+      "informationPresentation": {
+        "type": "",
+        "options": ""
+      },
+      "unitsOptions": {
+        "targetImperial": "",
+        "targetMetric": "",
+        "muzzleyUnit": ""
+      },
+      "mainActionPriority": 0,
+      "actionPresentation": {
+        "type": "",
+        "options": ""
+      },
+      "schema": "https://ontology.muzzley.com/schemas/v1/connection-status",
+      "schemaExtension": "{}",
+      "isTriggerable": false,
+      "isActionable": false,
+      "requiredCapabilities": "[]",
+      "controlInterfaces": [],
+      "triggers": [],
+      "actions": [],
+      "io": "rs",
+      "onChange": false,
+      "rateLimit": 0,
+      "components": "[\"bridge\"]"
+    },
+    {
+      "id": "heartbeat-lights",
+      "label": "Lights heartbeat",
+      "agentLabel": "",
+      "classes": "[\"com.muzzley.properties.heartbeat\"]",
+      "mainInformationPriority": 0,
+      "informationPresentation": {
+        "type": "",
+        "options": ""
+      },
+      "unitsOptions": {
+        "targetImperial": "",
+        "targetMetric": "",
+        "muzzleyUnit": ""
+      },
+      "mainActionPriority": 0,
+      "actionPresentation": {
+        "type": "",
+        "options": ""
+      },
+      "schema": "https://ontology.muzzley.com/schemas/v1/heartbeat",
+      "schemaExtension": "{}",
+      "isTriggerable": false,
+      "isActionable": false,
+      "requiredCapabilities": "[]",
+      "controlInterfaces": [],
+      "triggers": [],
+      "actions": [],
+      "io": "r",
+      "onChange": false,
+      "rateLimit": 0,
+      "components": "[\"bridge\"]"
+    }
+  ],
+  "tiles": [
+    {
+      "label": "Bulb",
+      "photoUrl": "https://cdn.muzzley.com/things/profiles/futlight/milights-tiles.jpg",
+      "photoUrlAlt": "https://cdn.muzzley.com/things/profiles/futlight/milights-tiles-centered.jpg",
+      "isGroupable": true,
+      "useInterface": true,
+      "components": [
+        "bulb"
+      ],
+      "inclusive": false,
+      "information": [
+        {
+          "property": "color",
+          "componentType": "bulb",
+          "type": "icon-color",
+          "options": "{\"format\":\"rgb\",\"char\":\"\\\\ue600\"}"
+        },
+        {
+          "property": "brightness",
+          "componentType": "bulb",
+          "type": "text-expression",
+          "options": "{\"suffix\":\"%\",\"prefix\":\"\",\"mathExpression\":\"x * 100\",\"inputPath\":\"data.value\"}"
+        }
+      ],
+      "actions": [
+        {
+          "property": "status",
+          "componentType": "bulb",
+          "type": "tri-state",
+          "options": "{\"mappings\":{\"off\":false,\"on\":true},\"icon\":\"on_off\",\"outputPath\":\"data.value\"}"
+        }
+      ]
+    }
+  ]
+}
