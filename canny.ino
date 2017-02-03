@@ -23,7 +23,7 @@
 
 
 // Muzzley Configuration
-String MProfileID = "56f5ac9fca1a124ae2906977";
+char MProfileID[25] = "56f5ac9fca1a124ae2906977";
 char MUUID[37] = "40e30d82-7cd2-477c-b3b0-700e184e0652";
 char MAppToken[17] = "2a3a08767d145205";
 
@@ -128,7 +128,11 @@ void setup() {
 
  
   // initialize SSD discovery
-  String urn = "urn:Muzzley:device:"+MProfileID+":1";
+  char urn[50]; // allocate enough memory for Chord[navigator], " : " and Camelot[navigator]
+  strcpy(urn, "urn:Muzzley:device:");   
+  strcat(urn, MProfileID);
+  strcat(urn, ":1");
+  //char urn[48] = "urn:Muzzley:device:".MProfileID.":1";
   SSDP.setDeviceType(urn);
   SSDP.setSchemaURL("description.xml");
   SSDP.setHTTPPort(80);
@@ -141,6 +145,7 @@ void setup() {
   SSDP.setModelURL("http://www.canny.io");
   SSDP.setManufacturer("Canny");
   SSDP.setManufacturerURL("http://canny.io");
+  SSDP.setmProfileID(MProfileID);
   SSDP.setDeviceKey(deviceKey);
   SSDP.begin();
 
@@ -178,7 +183,7 @@ void connect() {
     delay (10); // TODO djsb - crash without this
     if (client.connect("ESP8266Client", MUUID, MAppToken)) {
       Serial.println("connected");
-      String substopic = "v1/iot/profiles/"+MProfileID+"/channels/1372ce90-d539-491b-b046-ef5b24aad3a5/#";
+      String substopic = "v1/iot/profiles/"+String(MProfileID)+"/channels/1372ce90-d539-491b-b046-ef5b24aad3a5/#";
       client.subscribe(substopic);
     } else {
       Serial.print("failed, rc=");

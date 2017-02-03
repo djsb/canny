@@ -81,7 +81,7 @@ static const char* _ssdp_schema_template =
       "<modelURL>%s</modelURL>"
       "<manufacturer>%s</manufacturer>"
       "<manufacturerURL>%s</manufacturerURL>"
-      "<UDN>uuid:56f5ac9fca1a124ae2906977</UDN>"
+      "<UDN>uuid:%s</UDN>"
       "<deviceKey>%s</deviceKey>"
       "<components>"
       "<component>"
@@ -126,6 +126,7 @@ _notify_time(0)
   _modelURL[0] = '\0';
   _manufacturer[0] = '\0';
   _manufacturerURL[0] = '\0';
+  _mProfileID[0] = '\0';
   _deviceKey[0] = '\0';
   sprintf(_schemaURL, "ssdp/schema.xml");
 }
@@ -233,6 +234,7 @@ void SSDPClass::schema(WiFiClient client){
     _modelURL,
     _manufacturer,
     _manufacturerURL,
+    _mProfileID,
     _deviceKey,
     _uuid
   );
@@ -396,6 +398,10 @@ void SSDPClass::setManufacturer(const char *name){
 
 void SSDPClass::setManufacturerURL(const char *url){
   strlcpy(_manufacturerURL, url, sizeof(_manufacturerURL));
+}
+
+void SSDPClass::setmProfileID(const char *mProfileID){
+  strlcpy(_mProfileID, mProfileID, sizeof(_mProfileID));
 }
 
 void SSDPClass::setMACAddress(const char *mac){

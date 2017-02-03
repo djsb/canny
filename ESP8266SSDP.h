@@ -25,6 +25,7 @@ class UdpContext;
 #define SSDP_MODEL_VERSION_SIZE     32
 #define SSDP_MANUFACTURER_SIZE      64
 #define SSDP_MANUFACTURER_URL_SIZE  128
+#define SSDP_MPROFILEID_SIZE 64
 #define SSDP_DEVICEKEY_SIZE  128
 
 typedef enum {
@@ -66,6 +67,7 @@ class SSDPClass{
     void setManufacturer(const char *name);
     void setManufacturerURL(const String& url) { setManufacturerURL(url.c_str()); }
     void setManufacturerURL(const char *url);
+    void setmProfileID(const char *mProfileID);
     void setHTTPPort(uint16_t port);
     void setMACAddress(const String& mac) { setMACAddress(mac.c_str()); };
     void setMACAddress(const char *mac);
@@ -101,6 +103,7 @@ class SSDPClass{
     char _macAddress[SSDP_MAC_SIZE];
     char _manufacturer[SSDP_MANUFACTURER_SIZE];
     char _manufacturerURL[SSDP_MANUFACTURER_URL_SIZE];
+    char _mProfileID[SSDP_MPROFILEID_SIZE];
     char _deviceKey[SSDP_DEVICEKEY_SIZE];
     char _modelName[SSDP_MODEL_NAME_SIZE];
     char _modelURL[SSDP_MODEL_URL_SIZE];
