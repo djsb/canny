@@ -86,9 +86,9 @@ Setup
 
 ### Setup: ESP8266 Arduino IDE Environment
 
-1.  **Increase MQTT buffer size: **Update the installed “MQTT” by Joel Gaelwiler
-    library by editing the file “MQTTClient.h” inside the “src” folder from
-    "\#define MQTT_BUFFER_SIZE 128” to "\#define MQTT_BUFFER_SIZE 512”
+1.  **Increase MQTT buffer size: ** Update the installed “MQTT” by Joel
+    Gaelwiler library by editing the file “MQTTClient.h” inside the “src” folder
+    from "\#define MQTT_BUFFER_SIZE 128” to "\#define MQTT_BUFFER_SIZE 512”
 
  
 
