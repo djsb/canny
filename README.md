@@ -11,13 +11,7 @@ the compatible bulbs.
 *note: this project is not yet out-of-the-box deployable. Drop me a message if
 you'd like to test.*
 
- 
-
- 
-
- 
-
- 
+![](https://cdn.muzzley.com/things/profiles/futlight/profile.jpg)
 
 Features
 --------
