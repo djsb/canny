@@ -205,6 +205,8 @@ Feature improvements:
 
 -   Better Support for white only bulbs
 
+-   Store bulbs status to circumvent the protocol unidirectional limitations
+
 Other project improvements:
 
 -   3D print case
