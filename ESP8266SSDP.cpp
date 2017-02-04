@@ -45,7 +45,7 @@ static const char* _ssdp_notify_template =
   "HOST: 239.255.255.250:1900\r\n"
   "NT: upnp:rootdevice\r\n"
   "NTS: ssdp:alive\r\n"
-  "USN: uuid:56f5ac9fca1a124ae2906977::upnp:rootdevice\r\n";
+  "USN: uuid:1111111111111111111111::upnp:rootdevice\r\n";
 
 static const char* _ssdp_packet_template =
   "%s" // _ssdp_response_template / _ssdp_notify_template
@@ -53,8 +53,8 @@ static const char* _ssdp_packet_template =
   "SERVER: Arduino/1.0 UPNP/1.1 %s/%s\r\n" // _modelName, _modelNumber
   "USN: uuid:%s\r\n" // _uuid
   "LOCATION: http://%u.%u.%u.%u:%u/%s\r\n" // WiFi.localIP(), _port, _schemaURL
-  "ST: urn:Muzzley:device:56f5ac9fca1a124ae2906977:1\r\n"
-  "USN: urn:Muzzley:device:56f5ac9fca1a124ae2906977:1\r\n"
+  "ST: urn:Muzzley:device:%s:1\r\n"
+  "USN: urn:Muzzley:device:%s:1\r\n"
   "\r\n";
 
 static const char* _ssdp_schema_template =
@@ -191,7 +191,8 @@ void SSDPClass::_send(ssdp_method_t method){
     SSDP_INTERVAL,
     _modelName, _modelNumber,
     _uuid,
-    IP2STR(&ip), _port, _schemaURL
+    IP2STR(&ip), _port, _schemaURL,
+    _mProfileID, _mProfileID
   );
 
   _server->append(buffer, len);

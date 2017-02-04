@@ -75,8 +75,7 @@ void setup() {
   Serial.begin(115200);
   
   SPIFFS.begin();
-  //SPIFFS.format();
-
+  //SPIFFS.format(); Serial.println("SPIFS Formatted"); delay(50000);
 
   //WiFiManager
   //Local intialization. Once its business is done, there is no need to keep it around
@@ -114,7 +113,7 @@ void setup() {
       HTTPClient httpclient;
       httpclient.begin("http://global-manager.muzzley.com/deviceapp/register");
     
-      httpclient.POST("{\"profileId\": \"555b46d0db93b4a08a9c9b38\",\"serialNumber\": \"" + serialNumber + "\"}");
+      httpclient.POST("{\"profileId\": \""+String(MProfileID)+"\",\"serialNumber\": \"" + serialNumber + "\"}");
       
       muzzleyconf.registerDeviceKey(serialNumber, httpclient.getString(), &deviceKey);
       httpclient.end();
@@ -183,7 +182,10 @@ void connect() {
     delay (10); // TODO djsb - crash without this
     if (client.connect("ESP8266Client", MUUID, MAppToken)) {
       Serial.println("connected");
-      String substopic = "v1/iot/profiles/"+String(MProfileID)+"/channels/1372ce90-d539-491b-b046-ef5b24aad3a5/#";
+      String deviceKey; 
+      String serialNumber;
+      muzzleyconf.getDeviceKey(&deviceKey, &serialNumber);
+      String substopic = "v1/iot/profiles/"+String(MProfileID)+"/channels/"+deviceKey+"/#";
       client.subscribe(substopic);
     } else {
       Serial.print("failed, rc=");
