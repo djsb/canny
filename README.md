@@ -1,14 +1,21 @@
 canny
 =====
 
-Canny is a \$7 implementation of a controller for the cheap bulbs sold under the
-brands MiLight, LimitlessLed, Easybulb or any other futlight clone.
+Canny is a \$7 (hw components cost) implementation of a controller for the cheap
+bulbs sold under the brands MiLight, LimitlessLed, Easybulb or any other
+futlight clone.
 
 It uses a ESP8266 device and a nRF24L01 radio module to directly interface with
 the compatible bulbs.
 
 *note: this project is not yet out-of-the-box deployable. Drop me a message if
 you'd like to test.*
+
+ 
+
+ 
+
+ 
 
  
 
@@ -107,9 +114,9 @@ Otherwise, just proceed to the next step.
 
 ### Setup: ESP8266 Arduino IDE Environment
 
-1.  **Increase MQTT buffer size:**  Update the installed “MQTT” by Joel
-    Gaelwiler library by editing the file “MQTTClient.h” inside the “src” folder
-    from "\#define MQTT_BUFFER_SIZE 128” to "\#define MQTT_BUFFER_SIZE 512”
+1.  **Increase MQTT buffer size:** Update the installed “MQTT” by Joel Gaelwiler
+    library by editing the file “MQTTClient.h” inside the “src” folder from
+    "\#define MQTT_BUFFER_SIZE 128” to "\#define MQTT_BUFFER_SIZE 512”
 
 2.  Open the Canny.ino project into Arduino.cc IDE
 
@@ -206,6 +213,18 @@ Feature improvements:
 -   Add hardreset button to clear wifi and paired bulbs configuration
 
 -   Better Support for white only bulbs
+
+Other project improvements:
+
+-   3D print case
+
+Credits
+-------
+
+This project uses libraries from other people as well as research made on the
+milight protocol. Some credits:
+
+-   Henryk Plotz: PL1167 promiscuous reverse engineering over protocol
 
 License
 -------
