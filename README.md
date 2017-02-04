@@ -60,7 +60,9 @@ Canny relies on specific hardware and software requirements.
 
 **Software:**
 
--   Arduino.cc IDE
+-   Arduino.cc IDE ([link](http://arduino.cc/))
+
+-   Arduino.cc with opened Canny project file (this project).
 
 -   Arduino IDE: Installed support for the ESP8266 board: "Tools -\> Board”,
     selecting the correct ESP module
@@ -101,9 +103,56 @@ First Time Usage
 
 ### First Time Usage: Configuring WiFi
 
+For first time you deploy the software into the ESP8266 or if it cannot connect
+to your WiFi network, it will automatically enter in configuration mode. You
+should to the following steps:
+
+1.  Connect your smartphone to a WiFi network named: “**CANNY-SETUP**"
+
+2.  Wait a few seconds until you get a configuration screen. Follow the steps in
+    order to connect your Canny gateway to your local network.
+
+*note: after your configuration, due to a existing bug, you need to manually
+reset the ESP8266. Just unplug the power cable.*
+
  
 
 ### First Time Usage: Pairing Bulbs
+
+Once you get Canny connected to your local network, you’ll be able to configure
+and control your home bulbs. Steps:
+
+1.  Connect your smartphone to your local WiFi network (important step!).
+
+2.  Download and open the Muzzley App. Follow the link: [Google
+    Play](https://play.google.com/store/apps/details?id=com.muzzley&hl=en), [App
+    Store](https://itunes.apple.com/pt/app/muzzley/id604133373?l=en&mt=8) or
+    [Windows 10
+    Store](https://www.microsoft.com/en-us/store/p/muzzley/9wzdncrdrjk1)
+
+3.  Once you’re logged on Muzzley, click the Add Device button and scroll down
+    to the Milight, Easybulb (Canny GW).
+
+4.  Make sure your smartphone is connected to the same network as your Canny GW.
+    Hit the Search button. Note: This is only for setup; you can later control
+    the bulbs from the internet.
+
+**More bulbs:** Repeat step 3 for each bulb you’d like to add to the Muzzley
+app.
+
+ 
+
+After you add a bulb to the Muzzley App you need to pair each entry to a
+physical bulb. Do the following:
+
+1.  On the Muzzley App press the bulb you’ve just added.
+
+2.  You’ll find a pairing button on the top left corner of the screen. Press it.
+
+3.  At the same time: Turn the bulb on (physical switch) and press the “Pair /
+    Unpair” button.
+
+4.  Your light should blink. If not, repeat step 3.
 
  
 
