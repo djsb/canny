@@ -118,14 +118,6 @@ should to the following steps:
 *note: after your configuration, due to a existing bug, you need to manually
 reset the ESP8266. Just unplug the power cable.*
 
-| 1 step | 2 step |
-|--------|--------|
-
-
-![](https://raw.githubusercontent.com/djsb/canny/master/ReadmeImages/IMG_1654.PNG)
-
-![](https://raw.githubusercontent.com/djsb/canny/master/ReadmeImages/IMG_1655.PNG)
-
  
 
 ### First Time Usage: Pairing Bulbs
@@ -141,12 +133,13 @@ and control your home bulbs. Steps:
     [Windows 10
     Store](https://www.microsoft.com/en-us/store/p/muzzley/9wzdncrdrjk1)
 
-3.  Once you’re logged on Muzzley, click the Add Device button and scroll down
-    to the Milight, Easybulb (Canny GW).
+3.  Once you’re logged on Muzzley, click the **Add Device** button and scroll
+    down to the Milight, Easybulb (Canny GW). [Screenshot
+    link](https://github.com/djsb/canny/blob/master/ReadmeImages/IMG_1656.PNG).
 
 4.  Make sure your smartphone is connected to the same network as your Canny GW.
     Hit the Search button. Note: This is only for setup; you can later control
-    the bulbs from the internet.
+    the bulbs from the internet. Screenshot link.
 
 **More bulbs:** Repeat step 3 for each bulb you’d like to add to the Muzzley
 app.
@@ -156,12 +149,16 @@ app.
 After you add a bulb to the Muzzley App you need to pair each entry to a
 physical bulb. Do the following:
 
-1.  On the Muzzley App press the bulb you’ve just added.
+1.  On the Muzzley App press the bulb you’ve just added. [Screenshot
+    link](https://github.com/djsb/canny/blob/master/ReadmeImages/IMG_1657.PNG).
 
 2.  You’ll find a pairing button on the top left corner of the screen. Press it.
+    [Screenshot
+    link](https://github.com/djsb/canny/blob/master/ReadmeImages/IMG_1658.PNG).
 
 3.  At the same time: Turn the bulb on (physical switch) and press the “Pair /
-    Unpair” button.
+    Unpair” button. [Screenshot
+    link](https://github.com/djsb/canny/blob/master/ReadmeImages/IMG_1659.PNG).
 
 4.  Your light should blink. If not, repeat step 3.
 
@@ -170,7 +167,7 @@ physical bulb. Do the following:
 Improvements
 ------------
 
- 
+Please send your feedback or pull requests.
 
 License
 -------
