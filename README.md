@@ -47,11 +47,11 @@ Canny relies on specific hardware and software requirements.
 
 Hardware:
 
-. ESP8266 compatible module
+-   ESP8266 compatible module
 
-. nRF24L01 radio module
+-   nRF24L01 radio module
 
-. some wiring to connect the ESP8266 and nRF24L01
+-   some wiring to connect the ESP8266 and nRF24L01
 
 
 
