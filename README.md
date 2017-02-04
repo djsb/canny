@@ -8,9 +8,6 @@ futlight clone.
 It uses a ESP8266 device and a nRF24L01 radio module to directly interface with
 the compatible bulbs.
 
-*note: this project is not yet out-of-the-box deployable. Drop me a message if
-you'd like to test.*
-
 ![](https://cdn.muzzley.com/things/profiles/futlight/profile.jpg)
 
 Features
