@@ -226,6 +226,10 @@ milight protocol. Some credits:
 
 -   Henryk Plotz: PL1167 promiscuous reverse engineering over protocol
 
+-   Joel Gaelwiler: MQTT implementation
+
+-   Benoit Blanchon: jSON Parser
+
 License
 -------
 
