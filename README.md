@@ -207,6 +207,9 @@ Feature improvements:
 
 -   Store bulbs status to circumvent the protocol unidirectional limitations
 
+-   Pair with remote controls and allow them to control other Muzzley compatible
+    devices
+
 Other project improvements:
 
 -   3D print case
