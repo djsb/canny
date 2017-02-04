@@ -93,7 +93,7 @@ nRF24L01 module.
 
 -   **PICTURE**
 
--   TO BE DONE: INCLUDE A PICTURE OF A REAL SETUP\*
+![](https://raw.githubusercontent.com/djsb/canny/master/ReadmeImages/nodemcu-nrf24l01-muzzley-real.jpg)
 
 ### Setup: Muzzley developer account
 
