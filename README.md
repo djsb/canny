@@ -107,13 +107,24 @@ For first time you deploy the software into the ESP8266 or if it cannot connect
 to your WiFi network, it will automatically enter in configuration mode. You
 should to the following steps:
 
-1.  Connect your smartphone to a WiFi network named: “**CANNY-SETUP**"
+1.  Connect your smartphone to a WiFi network named: “**CANNY-SETUP**“.
+    [Screenshot
+    link](https://github.com/djsb/canny/blob/master/ReadmeImages/IMG_1654.PNG).
 
 2.  Wait a few seconds until you get a configuration screen. Follow the steps in
-    order to connect your Canny gateway to your local network.
+    order to connect your Canny gateway to your local network. [Screenshot
+    link](https://github.com/djsb/canny/blob/master/ReadmeImages/IMG_1655.PNG).
 
 *note: after your configuration, due to a existing bug, you need to manually
 reset the ESP8266. Just unplug the power cable.*
+
+| 1 step | 2 step |
+|--------|--------|
+
+
+![](https://raw.githubusercontent.com/djsb/canny/master/ReadmeImages/IMG_1654.PNG)
+
+![](https://raw.githubusercontent.com/djsb/canny/master/ReadmeImages/IMG_1655.PNG)
 
  
 
