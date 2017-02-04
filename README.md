@@ -80,9 +80,28 @@ Setup
 
 ### Setup: Hardware Setup
 
- 
+The hardware setup is quite simple if you have a ESP8266 development board with
+physical pins for IO. All you have to do it connect both hardware modules and
+power the main board.
+
+-   **DIAGRAM**
+
+The above diagram illustrates the connectivity between the ESP8266 and the
+nRF24L01 module.
+
+*                                       TO BE DONE: INCLUDE DIAGRAM*
+
+-   **PICTURE**
+
+*                        TO BE DONE: INCLUDE A PICTURE OF A REAL SETUP*
 
 ### Setup: Muzzley developer account
+
+This step is optional and you should  consider it, if you’d like to fork this
+project and have your own implementation or use Muzzley for business features
+(example: have your own controlling App).
+
+Otherwise, just proceed to the next step.
 
  
 
@@ -100,6 +119,9 @@ Setup
 
 First Time Usage
 ----------------
+
+Find the first usage guidelines, once you have deployed the software onto the
+ESP8266 and you have all the hardware setup done.
 
 ### First Time Usage: Configuring WiFi
 
