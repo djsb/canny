@@ -54,3 +54,10 @@ First Time Usage
 
 Improvements
 ------------
+
+ 
+
+License
+-------
+
+Otherwise stated on individual project files, Canny's license is MIT.
