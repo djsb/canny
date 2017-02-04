@@ -18,13 +18,11 @@ Features
 Canny pretends to overcome the limitations of these devices by bringing
 additional features and reliability.
 
- 
-
-Gateway capabilities:
+**Gateway capabilities:**
 
 -   Individually control up to 2048 bulbs
 
-Software capabilities:
+**Software capabilities:**
 
 -   Manual control over bulbs or groups of bulbs
 
@@ -34,11 +32,11 @@ Software capabilities:
 
 -   Bulbs as notification devices for smartphone calls, others
 
-IoT capabilities:
+**IoT capabilities:**
 
 -   Expandable to other usages over the Muzzley platform
 
-Security:
+**Security:**
 
 -   Additional security to standard milight/easybulb bridge authentication
 
@@ -49,7 +47,7 @@ Requirements
 
 Canny relies on specific hardware and software requirements.
 
-Hardware:
+**Hardware:**
 
 -   ESP8266 compatible module (amazon
     [link](https://www.amazon.com/NodeMcu-Internet-Things-Development-ESP8266/dp/B01H701G6M/ref=sr_1_16?s=pc&ie=UTF8&qid=1486169007&sr=1-16&keywords=esp8266))
@@ -60,7 +58,20 @@ Hardware:
 -   some wiring to connect the ESP8266 and nRF24L01 (amazon
     [link](https://www.amazon.com/Header-Copper-Flexible-Arduino-Breadboard/dp/B0126HIIDA/ref=sr_1_3?s=pc&ie=UTF8&qid=1486169146&sr=1-3&keywords=arduino+wire))
 
+**Software:**
 
+-   Arduino.cc IDE
+
+-   Arduino IDE: Installed support for the ESP8266 board: "Tools -\> Board”,
+    selecting the correct ESP module
+
+-   Arduino IDE: Correctly installed library: wifi manager
+
+-   Arduino IDE: Correctly installed library: “MQTT” by Joel Gaelwiler
+
+-   Arduino IDE: Correctly installed library: “arduino json” by Benoit Blanchon
+
+ 
 
 Setup
 -----
@@ -74,6 +85,10 @@ Setup
  
 
 ### Setup: ESP8266 Arduino IDE Environment
+
+1.  **Increase MQTT buffer size: **Update the installed “MQTT” by Joel Gaelwiler
+    library by editing the file “MQTTClient.h” inside the “src” folder from
+    "\#define MQTT_BUFFER_SIZE 128” to "\#define MQTT_BUFFER_SIZE 512”
 
  
 
