@@ -93,11 +93,11 @@ nRF24L01 module.
 
 -   **PICTURE**
 
-*                        TO BE DONE: INCLUDE A PICTURE OF A REAL SETUP*
+-   TO BE DONE: INCLUDE A PICTURE OF A REAL SETUP\*
 
 ### Setup: Muzzley developer account
 
-This step is optional and you should  consider it, if you’d like to fork this
+This step is optional and you should consider it, if you’d like to fork this
 project and have your own implementation or use Muzzley for business features
 (example: have your own controlling App).
 
@@ -107,9 +107,19 @@ Otherwise, just proceed to the next step.
 
 ### Setup: ESP8266 Arduino IDE Environment
 
-1.  **Increase MQTT buffer size: ** Update the installed “MQTT” by Joel
+1.  **Increase MQTT buffer size:**  Update the installed “MQTT” by Joel
     Gaelwiler library by editing the file “MQTTClient.h” inside the “src” folder
     from "\#define MQTT_BUFFER_SIZE 128” to "\#define MQTT_BUFFER_SIZE 512”
+
+2.  Open the Canny.ino project into Arduino.cc IDE
+
+3.  Compile
+
+4.  Push code into arduino
+
+Note: If you have gone through the step “Setup: Muzzley developer account”, you
+need to update Muzzley’s credentials at canny.ino file. Variables to update:
+MProfileID, MUUID and MAppToken.
 
  
 
@@ -190,6 +200,12 @@ Improvements
 ------------
 
 Please send your feedback or pull requests.
+
+Feature improvements:
+
+-   Add hardreset button to clear wifi and paired bulbs configuration
+
+-   Better Support for white only bulbs
 
 License
 -------
