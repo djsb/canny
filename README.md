@@ -194,6 +194,15 @@ physical bulb. Do the following:
 
  
 
+Features & Screenshots
+----------------------
+
+These are some of the features and screenshots of the Muzzley App.
+
+![](https://raw.githubusercontent.com/djsb/canny/master/ReadmeImages/screens.png)
+
+ 
+
 Improvements
 ------------
 
