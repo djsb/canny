@@ -16,11 +16,10 @@
 #include "MuzzleyRegister.h"
 #include <ESP8266HTTPClient.h>
 
-// Muzzley Configuration
+// Muzzley Configuration. Get these from the developers selfcare at www.muzzley.com
 char MProfileID[25] = "56f5ac9fca1a124ae2906977";
 char MUUID[37] = "40e30d82-7cd2-477c-b3b0-700e184e0652";
 char MAppToken[17] = "2a3a08767d145205";
-
 // End of Muzzley configuration
 
 #define CE_PIN 2

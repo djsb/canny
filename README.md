@@ -117,9 +117,9 @@ Otherwise, just proceed to the next step.
 
 4.  Push code into arduino
 
-Note: If you have gone through the step “Setup: Muzzley developer account”, you
+*Note: If you have gone through the step “Setup: Muzzley developer account”, you
 need to update Muzzley’s credentials at canny.ino file. Variables to update:
-MProfileID, MUUID and MAppToken.
+MProfileID, MUUID and MAppToken.*
 
  
 
