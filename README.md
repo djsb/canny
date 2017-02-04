@@ -89,7 +89,7 @@ power the main board.
 The above diagram illustrates the connectivity between the ESP8266 and the
 nRF24L01 module.
 
-![](https://raw.githubusercontent.com/djsb/canny/master/ReadmeImages/nodemcu-nrf24l01-muzzley.png)
+![](https://raw.githubusercontent.com/djsb/canny/master/ReadmeImages/nodemcu-nrf24l01-muzzley-crop.png)
 
 -   **PICTURE**
 
