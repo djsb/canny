@@ -71,6 +71,8 @@ Canny relies on specific hardware and software requirements.
 
 -   Arduino IDE: Correctly installed library: “arduino json” by Benoit Blanchon
 
+-   Arduino IDE: Correctly installed library: “RF24” by TMRh20
+
  
 
 Setup

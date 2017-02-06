@@ -222,9 +222,9 @@ void loop() {
 
 
 void messageReceived(String topic, String payload, char * bytes, unsigned int length) {
-  Serial.print("\nIncoming message: ");
+  Serial.print("\nIncoming message: \n  - ");
   Serial.print(topic);
-  Serial.print(" - ");
+  Serial.print("\n  - ");
   Serial.print(payload);
   Serial.println();
 
@@ -413,7 +413,7 @@ void send_command(int outgoingPckt [7]){
   }
 
   mlr.write(outgoingPacket_tmp, sizeof(outgoingPacket_tmp));
-  printf("\nSending packet: ");
+  // printf("\nSending packet: ");
   for (int ps = 0; ps < sizeof(outgoingPacket_tmp); ps++) {
     printf("%02X ", outgoingPacket_tmp[ps]);   
   }
